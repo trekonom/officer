@@ -15,6 +15,7 @@ presentation <- R6Class(
       private$slide_id <- slide_df$id
       private$slide_rid <- slide_df$rid
 
+      self$extension_list <- extensionList$new(self)
     },
 
     add_slide = function(target){
@@ -81,8 +82,9 @@ presentation <- R6Class(
       private$update_xml()
 
       self
-    }
+    },
 
+    extension_list = NULL
   ),
   private = list(
 
